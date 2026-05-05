@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -60,7 +61,9 @@ export default function Home() {
         {reply && (
           <div className="mt-8 p-6 bg-gray-100 rounded-lg border border-gray-200 text-gray-800">
             <h3 className="font-bold mb-2">Chatbot Reply:</h3>
-            <p className="whitespace-pre-wrap">{reply}</p>
+            <div className="prose prose-blue max-w-none">
+              <ReactMarkdown>{reply}</ReactMarkdown>
+            </div>
           </div>
         )}
       </div>
